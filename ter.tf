@@ -1,16 +1,18 @@
-provider "kubernetes" {
+provider "aws" {
 
-  config_path = "~/.kube/config"
-  config_context = "minikube"
+  region = "ap-northeast-1"
   
 }
 
+data "aws_availability_zones" "sample" {
 
-resource "kubernetes_namespace" "sam" {
+  all_availability_zones = true
 
-  metadata {
-    name = "firns"
+}
 
-  }
+
+output "azs" {
+
+  value = data.aws_availability_zones.sample
   
 }
