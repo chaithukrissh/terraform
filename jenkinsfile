@@ -12,7 +12,7 @@ pipeline{
 
         stage("ansiible"){
             steps{
-                sh "cd terraform"
+                sh "cd ~/terraform"
                 sh "ansible-playbook  -i /home/ubuntu/terraform/hosts ansible.yaml"
             }
 
