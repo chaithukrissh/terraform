@@ -2,8 +2,9 @@
 - name: sample ansible file
   hosts: ec2
   tasks:
-  - name: to check the status of ec2 instance
-    cmd: whoami
+    - name: to check the status of ec2 instance
+      command: whoami
+      
 
 
 
